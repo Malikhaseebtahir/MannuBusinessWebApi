@@ -24,6 +24,12 @@ namespace MannuBusinessWebApi.Controllers
             _context = context;
         }
 
+        [HttpGet("businessTypes")]
+        public async Task<IActionResult> GetBusinessTypes()
+        {
+            return Ok(await _context.BusinessTypes.ToListAsync());
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetBusinesses()
         {
